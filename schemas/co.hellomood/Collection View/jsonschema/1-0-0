@@ -1,0 +1,28 @@
+{
+    "$schema": "https://boombox.hellomood.co/schemas/co.hellomood/jsonschema/1-0-0",
+    "description": "Schema for a product",
+    "self": {
+        "vendor": "co.hellomood",
+        "name": "Collection View",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "type": "object",
+    "properties":{
+        "collectionType":{
+            "description": "The type of collection viewed (e.g. Best Products)",
+            "type": "string",
+            "maxLength": 800
+        },
+        "collectionId":{
+            "description": "The ID of the collection viewed",
+            "type": "string",
+            "maxLength": 800
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "collectionType", 
+        "collectionId"
+    ]
+}

@@ -1,0 +1,55 @@
+{
+    "$schema": "https://boombox.hellomood.co/schemas/co.hellomood/jsonschema/1-0-0",
+    "description": "Schema for a cart",
+    "self": {
+        "vendor": "co.hellomood",
+        "name": "Cart",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "type": "object",
+    "properties":{
+        "cartId": {
+            "description" : "The SKU or product ID.",
+            "type": "string",
+            "maxLength": 4096
+        },
+        "totalDiscount": {
+            "description": "The total discount",
+            "type": "number",
+            "minimum": 0,
+            "multipleOf": 0.01,
+            "maximum": 9999999
+        },
+        "totalTax": {
+            "description": "The total tax cost.",
+            "type": "number",
+            "minimum": 0,
+            "multipleOf": 0.01,
+            "maximum": 9999999
+        },
+        "totalShipping": {
+            "description": "The total shipping cost",
+            "type": "number",
+            "minimum": 0,
+            "multipleOf": 0.01,
+            "maximum": 9999999
+        },
+        "subTotal": {
+            "description": "The total value of the cart before shipping, tax, and discounts",
+            "type": "number",
+            "minimum": 0,
+            "multipleOf": 0.01,
+            "maximum": 9999999
+        },
+        "total": {
+            "description": "The total value of the cart after discount, shipping, and tax.",
+            "type": "number",
+            "minimum": 0,
+            "multipleOf": 0.01,
+            "maximum": 9999999
+        }
+    },
+    "additionalProperties": false,
+    "required": ["id","subTotal","total"]
+}

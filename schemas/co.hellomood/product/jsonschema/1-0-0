@@ -1,0 +1,140 @@
+{
+    "$schema": "https://boombox.hellomood.co/schemas/co.hellomood/jsonschema/1-0-0",
+    "description": "Schema for a product",
+    "self": {
+        "vendor": "co.hellomood",
+        "name": "Product",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "type": "object",
+    "properties":{
+        "sku":{
+            "description": "ID of the product",
+            "type": "string",
+            "maxLength":4096
+        },
+        "name":{
+            "description": "The name or title of the product (excl variant)",
+            "type": "string",
+            "maxLength":4096
+        },
+        "category": {
+            "description" : "The category the product belongs to. Use a consistent separator to express multiple levels. E.g. Woman/Shoes/Sneakers",
+            "type": "string",
+            "maxLength": 4096
+        },
+        "subCategory": {
+            "description" : "The category the product belongs to. Use a consistent separator to express multiple levels. E.g. Woman/Shoes/Sneakers",
+            "type": "string",
+            "maxLength": 4096
+        },
+        "mood": {
+            "description" : "The category the product belongs to. Use a consistent separator to express multiple levels. E.g. Woman/Shoes/Sneakers",
+            "type": "string",
+            "maxLength": 4096
+        },
+        "isSubscription": {
+            "description" : "Whether or not the line-item is a subscription",
+            "type" : "boolean"
+        },
+        "subscriptionId":{
+            "description" : "The ID of the subscription.",
+            "type" : [
+                "string",
+                "null"
+            ],
+            "maxLength": 4096
+        },
+        "subscriptionFrequency":{
+            "description" : "The frequency of the subscription in weeks",
+            "type" : "integer", 
+            "minimum": 1
+        },
+        "isBundle":{
+            "description" : "Whether or not the line-item is a part of a bundle.",
+            "type" : "boolean"
+        },
+        "bundleId":{
+            "description" : "The ID of the bundle",
+            "type" : [
+                "string",
+                "null"
+            ],
+            "maxLength": 4096
+        },
+        "bundleType":{
+            "description" : "The type of bundle",
+            "type" : [
+                "string",
+                "null"
+            ],
+            "maxLength": 4096
+        },
+        "price": {
+            "description" : "The price of the product at the current time.",
+            "type": "number",
+            "minimum": 0,
+            "multipleOf": 0.01,
+            "maximum": 9999999
+        },
+        "discount": {
+            "description" : "The total line item discount on the item",
+            "type" : [
+                "number", 
+                "null"
+            ],
+            "minimum": 0,
+            "multipleOf": 0.01,
+            "maximum": 9999999
+        },
+        "quantity" : {
+            "description" : "The quantity of the product taking part in the ecommerce action.",
+            "type": [
+                "integer", 
+                "null"
+            ],
+            "minimum": 0,
+            "maximum": 9999999
+        },
+        "size": {
+            "description" : "The size of the product (count, total grams, etc.)",
+            "type" : [
+                "string",
+                "null"
+            ],
+            "maxLength": 4096
+        },
+        "imageUrl":{
+            "description" : "The image URL associated with the product",
+            "type" : [
+                "string",
+                "null"
+            ],
+            "maxLength": 4096
+        },
+        "variant": {
+            "description" : "The variant of the product.",
+            "type" : [
+                "string",
+                "null"
+            ],
+            "maxLength": 4096
+        },
+        "inventoryStatus": {
+            "description" : "The inventory status of the product E.g. in stock, out of stock, preorder, backorder.",
+            "type" : [
+                "string",
+                "null"
+            ],
+            "enum": [
+                "In Stock",
+                "Out of Stock",
+                "Preorder",
+                "Backorder"
+            ]
+        }
+    },
+    "additionalProperties": false,
+    "required": ["sku","name"]
+}

@@ -1,0 +1,114 @@
+{
+    "$schema": "https://boombox.hellomood.co/schemas/co.hellomood/jsonschema/1-0-0",
+    "description": "Schema for a product",
+    "self": {
+        "vendor": "co.hellomood",
+        "name": "Checkout Action",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "type": "object",
+    "properties":{
+        "action": {
+            "description": "Checkout action taken.",
+            "type": "string",
+            "enum": [
+                "Begin Checkout",
+                "Add Shipping Info",
+                "Add Payment Info"
+            ]
+        },
+        "shippingZip":{
+            "description": "Shipping Zip",
+            "type": [
+                "string",
+                "null"
+            ],
+            "maxLength": 128
+        },
+        "billingZip":{
+            "description": "Billing Zip",
+            "type": [
+                "string",
+                "null"
+            ],
+            "maxLength": 128
+        },
+        "shippingCity": {
+            "description": "Shipping City",
+            "type" : [
+                "string",
+                "null"
+            ],
+            "maxLength": 4096
+        },
+        "billingCity": {
+            "description": "Billing City",
+            "type" : [
+                "string",
+                "null"
+            ],
+            "maxLength": 4096
+        },
+        "shippingState": {
+            "description": "Shipping state",
+            "type" : [
+                "string",
+                "null"
+            ],
+            "maxLength": 4096
+        },
+        "billingState": {
+            "description": "Billing state",
+            "type" : [
+                "string",
+                "null"
+            ],
+            "maxLength": 4096
+        },
+        "shippingAddress": {
+            "description": "Full shipping address.",
+            "type" : [
+                "string",
+                "null"
+            ],
+            "maxLength": 4096
+        },
+        "billingAddress": {
+            "description": "Full billing address.",
+            "type" : [
+                "string",
+                "null"
+            ],
+            "maxLength": 4096
+        },
+        "accountType": {
+            "description": "Type of account used on checkout. E.g. existing user, guest.",
+            "type" : [
+                "string",
+                "null"
+            ],
+            "enum": [
+                "Guest",
+                "User"
+            ] 
+        },
+        "paymentType": {
+            "description": "Any kind of payment method the user selected to proceed E.g. card, PayPal, Alipay etc.",
+            "type" : [
+                "string",
+                "null"
+            ],
+            "enum": [
+                "Sezzle",
+                "Credit Card",
+                "Debit Card",
+                "Paypal",
+                "Google Pay",
+                "Apple Pay"
+            ]
+        }
+    },
+    "additionalProperties": false,
+    "required": ["action"]
+}

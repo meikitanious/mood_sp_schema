@@ -1,0 +1,16 @@
+{
+    "$schema": "https://boombox.hellomood.co/schemas/co.hellomood/jsonschema/1-0-0",
+    "description": "Schema for a user",
+    "self": {
+        "vendor": "co.hellomood",
+        "name": "user",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "type": "object",
+    "properties":{
+
+    },
+    "additionalProperties": false,
+    "required": [""]
+}

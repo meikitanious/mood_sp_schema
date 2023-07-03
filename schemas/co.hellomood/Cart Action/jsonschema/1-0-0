@@ -1,0 +1,25 @@
+{
+    "$schema": "https://boombox.hellomood.co/schemas/co.hellomood/jsonschema/1-0-0",
+    "description": "Schema for a collection view",
+    "self": {
+        "vendor": "co.hellomood",
+        "name": "Cart Action",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "type": "object",
+    "properties":{
+        "action":{
+            "description": "The type of action taken by the user.",
+            "type": "string",
+            "enum": [
+                "add",
+                "change",
+                "remove",
+                "view"
+            ]
+        }
+    },
+    "additionalProperties": false,
+    "required": ["action"]
+}

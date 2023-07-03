@@ -1,0 +1,28 @@
+{
+    "$schema": "https://boombox.hellomood.co/schemas/co.hellomood/jsonschema/1-0-0",
+    "description": "Schema for a page",
+    "self": {
+        "vendor": "co.hellomood",
+        "name": "Page",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "type": "object",
+    "properties":{
+        "pageType":{
+            "description": "",
+            "type": "string",
+            "enum":[
+                "Product",
+                "Homepage",
+                "Landing Page",
+                "Collection Page",
+                "Blog Post",
+                "Blog Collection",
+                "Cornerstone"
+            ]
+        }
+    },
+    "additionalProperties": false,
+    "required": ["pageType"]
+}

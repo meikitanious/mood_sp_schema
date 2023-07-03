@@ -1,0 +1,22 @@
+{
+    "$schema": "https://boombox.hellomood.co/schemas/co.hellomood/jsonschema/1-0-0",
+    "description": "Schema for a Sign Up",
+    "self": {
+        "vendor": "co.hellomood",
+        "name": "Sign Up",
+        "format": "jsonschema",
+        "version": "1-0-0"
+    },
+    "type": "object",
+    "properties":{
+        "category": {
+            "description": "What kind of sign up occured?",
+            "type": "string",
+            "enum": [
+
+            ]
+        }
+    },
+    "additionalProperties": false,
+    "required": [""]
+}
